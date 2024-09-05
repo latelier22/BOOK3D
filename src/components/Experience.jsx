@@ -4,19 +4,16 @@ import { Book } from "./Book";
 export const Experience = () => {
   return (
     <>
-      {/* <Float
-        rotation-x={-Math.PI / 4}
-        floatIntensity={1}
-        speed={2}
-        rotationIntensity={2}
-      > */}
-      <Stage>
-
+      <Float
+        rotation-x={-Math.PI / 8}
+        floatIntensity={0.3}
+        speed={1.5}
+        rotationIntensity={1}
+      >
         <Book />
-      </Stage>
-      {/* </Float> */}
+      </Float>
       <OrbitControls />
-      {/* <Environment preset="sunset"></Environment> */}
+      <Environment intensity={0.2} preset="warehouse"></Environment>
       <directionalLight
         position={[2, 10, 10]}
         intensity={0.1}
