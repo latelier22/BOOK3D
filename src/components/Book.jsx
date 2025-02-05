@@ -26,7 +26,7 @@ const outsideCurveStrength = 0.05; // Controls the strength of the curve
 const turningCurveStrength = 0.09; // Controls the strength of the curve
 
 const PAGE_WIDTH = 1.28;
-const PAGE_HEIGHT = 1.71; // 4:3 aspect ratio
+const PAGE_HEIGHT = 1.28; // 1:1 aspect ratio
 const PAGE_DEPTH = 0.003;
 const PAGE_SEGMENTS = 30;
 const SEGMENT_WIDTH = PAGE_WIDTH / PAGE_SEGMENTS;
@@ -75,7 +75,7 @@ const pageMaterials = [
     color: whiteColor,
   }),
   new MeshStandardMaterial({
-    color: "#111",
+    color: "#000",
   }),
   new MeshStandardMaterial({
     color: whiteColor,
@@ -127,30 +127,16 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
       new MeshStandardMaterial({
         color: whiteColor,
         map: picture,
-        ...(number === 0
-          ? {
-              roughnessMap: pictureRoughness,
-               metalness:0.1
-            }
-          : {
-              roughness: 0.3,
-              metalness:0.1
-            }),
+        roughness: 0.8, // Augmente pour réduire la brillance
+        metalness: 0, // Réduit l'effet métallique
         emissive: emissiveColor,
         emissiveIntensity: 0,
       }),
       new MeshStandardMaterial({
         color: whiteColor,
         map: picture2,
-        ...(number === pages.length - 1
-          ? {
-              roughnessMap: pictureRoughness,
-              metalness:0.1
-            }
-          : {
-              roughness: 0.3,
-              metalness:0.1
-            }),
+        roughness: 0.8, // Même correction pour l'autre face
+        metalness: 0,
         emissive: emissiveColor,
         emissiveIntensity: 0,
       }),

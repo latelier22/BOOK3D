@@ -1,24 +1,12 @@
 import { atom, useAtom } from "jotai";
 import { useEffect, useState } from "react";
 
-const pictures = [
-  "page_1",
-  "page_2",
-  "page_3",
-  "page_4",
-  "page_5",
-  "page_6",
-  "page_7",
-  "page_8",
-  "page_9",
-  "page_10",
-  "page_11",
-  "page_12",
-  "page_13",
-  "page_14",
-  "page_15",
-  "page_16",
-];
+const nbPages =38
+
+const pictures = Array.from({ length: nbPages-2 }, (_, i) => `page_${i + 1}`);
+
+console.log(pictures);
+
 
 export const pageAtom = atom(0);
 export const pages = [
@@ -84,7 +72,7 @@ export const UI = () => {
                 }`}
                 onClick={() => setPage(index)}
               >
-                {index === 0 ? "Couv" : `Page ${index}`}
+                {index === 0 ? "Couv" : `${index}`}
               </button>
             ))}
             <button
@@ -105,54 +93,31 @@ export const UI = () => {
         <div className="relative">
           <div className="bg-white/0 animate-horizontal-scroll flex items-center gap-8 w-max px-8">
             <h1 className="shrink-0 text-yellow-700 text-10xl font-black">
-              Catalogue
+              Expo
             </h1>
             <h2 className="shrink-0 text-yellow-700 text-8xl italic font-light">
               Marcel Séjour
             </h2>
             <h2 className="shrink-0 text-yellow-700 text-12xl font-bold">
-              Noir et Blanc
+              Île d'Teu
             </h2>
             <h2 className="shrink-0 outline-yellow-700 text-transparent text-12xl font-bold italic outline-text">
-              Couleur
+              2025
             </h2>
-            <h2 className="shrink-0 text-yellow-700 text-9xl font-medium">
-              D'Anjou et d&apos;ailleurs
-            </h2>
-            <h2 className="shrink-0 text-yellow-700 text-9xl font-extralight italic">
-              Mayotte
-            </h2>
-            <h2 className="shrink-0 outline-yellow-700 outline-text text-transparent text-13xl font-bold italic">
-              Comores
-            </h2>
-            <h2 className="shrink-0 outline-yellow-700 text-transparent text-12xl font-bold italic outline-text">
-              Anjou
-            </h2>
+
           </div>
           <div className="absolute top-0 left-0 bg-white/0 animate-horizontal-scroll-2 flex items-center gap-8 px-8 w-max">
-            <h1 className="shrink-0 text-yellow-700 text-10xl font-black">
-              Catalogue
+          <h1 className="shrink-0 text-yellow-700 text-10xl font-black">
+              Expo
             </h1>
             <h2 className="shrink-0 text-yellow-700 text-8xl italic font-light">
               Marcel Séjour
             </h2>
             <h2 className="shrink-0 text-yellow-700 text-12xl font-bold">
-              Noir et Blanc
+              Île d'Teu
             </h2>
             <h2 className="shrink-0 outline-yellow-700 text-transparent text-12xl font-bold italic outline-text">
-              Couleur
-            </h2>
-            <h2 className="shrink-0 text-yellow-700 text-9xl font-medium">
-              D'Anjou et d&apos;ailleurs
-            </h2>
-            <h2 className="shrink-0 text-yellow-700 text-9xl font-extralight italic">
-              Mayotte
-            </h2>
-            <h2 className="shrink-0 text-yellow-700 text-13xl font-bold">
-              Comores
-            </h2>
-            <h2 className="shrink-0 outline-yellow-700 text-transparent text-12xl font-bold italic outline-text">
-              Anjou
+              2025
             </h2>
           </div>
         </div>
