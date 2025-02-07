@@ -1,7 +1,7 @@
 import { atom, useAtom } from "jotai";
 import { useEffect, useState } from "react";
 
-const nbPages =38
+const nbPages =48
 
 const pictures = Array.from({ length: nbPages-2 }, (_, i) => `page_${i + 1}`);
 
