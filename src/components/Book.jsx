@@ -86,15 +86,15 @@ const pageMaterials = [
 ];
 
 pages.forEach((page) => {
-  useTexture.preload(`/textures/${page.front}.webp`);
-  useTexture.preload(`/textures/${page.back}.webp`);
+  useTexture.preload(`/textures/${page.front}.jpg`);
+  useTexture.preload(`/textures/${page.back}.jpg`);
   useTexture.preload(`/textures/book-cover-roughness.png`);
 });
 
 const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
   const [picture, picture2, pictureRoughness] = useTexture([
-    `/textures/${front}.webp`,
-    `/textures/${back}.webp`,
+    `/textures/${front}.jpg`,
+    `/textures/${back}.jpg`,
     ...(number === 0 || number === pages.length - 1
       ? [`/textures/book-cover-roughness.png`]
       : []),

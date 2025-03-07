@@ -1,23 +1,24 @@
-import { Loader } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-import { Experience } from "./components/Experience";
-import { UI } from "./components/UI";
+import React from 'react';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Home from './Home';
+import PDFReader from './PDFReader';
 
 function App() {
   return (
-    <>
-      <UI />
-      <Loader />
-      <Canvas shadows camera={{ position: [-0.5, 1, 3], fov: 45 }}>
-        <group position-y={0}>
-          <Suspense fallback={null}>
-            <Experience />
-          </Suspense>
-        </group>
-      </Canvas>
-    </>
+  
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home/>} />
+        <Route path="/PDFReader" element={<PDFReader />} />
+        
+    </Routes>
+    </Router>
   );
 }
+     
+  
+
 
 export default App;
