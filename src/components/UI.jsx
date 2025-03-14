@@ -99,7 +99,7 @@ export const UI = () => {
               Marcel Séjour
             </h2>
             <h2 className="shrink-0 text-yellow-700 text-12xl font-bold">
-              Île d'Teu
+              Sallertaine
             </h2>
             <h2 className="shrink-0 outline-yellow-700 text-transparent text-12xl font-bold italic outline-text">
               2025
@@ -114,7 +114,7 @@ export const UI = () => {
               Marcel Séjour
             </h2>
             <h2 className="shrink-0 text-yellow-700 text-12xl font-bold">
-              Île d'Teu
+              Sallertaine
             </h2>
             <h2 className="shrink-0 outline-yellow-700 text-transparent text-12xl font-bold italic outline-text">
               2025
